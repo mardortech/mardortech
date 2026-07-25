@@ -1,0 +1,23 @@
+{
+  "name": "MarDor Technologies",
+  "short_name": "MarDor",
+  "description": "Technology You Can Trust",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#16233D",
+  "theme_color": "#16233D",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
