@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | MarDor Technologies</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-section {
+            padding: 90px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        @media (max-width: 768px) {
+            .contact-section { grid-template-columns: 1fr; }
+        }
+        .contact-info {
+            background: #003366;
+            color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+        }
+        .contact-info h2 { color: #fff; margin-bottom: 20px; }
+        .contact-info p { color: #e0e0e0; margin-bottom: 15px; font-size: 1.1rem; }
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block; margin-bottom: 8px; font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px;
+            border: 1px solid #ddd; border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-group textarea { resize: vertical; height: 120px; }
+        .btn-submit {
+            background: #0057d9; color: #fff;
+            padding: 12px 25px; border: none; border-radius: 5px;
+            font-size: 1.1rem; cursor: pointer; transition: 0.3s;
+        }
+        .btn-submit:hover { background: #003366; }
+        
+        .form-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .form-message.success { background: #d4edda; color: #155724; display: block; }
+        .form-message.error { background: #f8d7da; color: #721c24; display: block; }
+    </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <p>
+        📞 Call: <strong>0758 539 522</strong> |
+        📧 mardor.tech@hotmail.com |
+        📍 God Jope Center, Opposite Sunami Pub, Migori
+    </p>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">
+        <img src="images/logo/logo-name.png" alt="MarDor Technologies">
+    </div>
+    <div class="menu-toggle" id="mobile-menu">☰</div><ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="notice.html">Notice Board</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <h1>Contact Us</h1>
+    <p>We would love to hear from you</p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+    <div class="contact-info">
+        <h2>Get In Touch</h2>
+        <p><strong>📞 Phone:</strong> 0758 539 522</p>
+        <p><strong>📧 Email:</strong> mardor.tech@hotmail.com</p>
+        <p><strong>📍 Location:</strong> God Jope Center, Opposite Sunami Pub, Migori</p>
+        <p><strong>🕒 Working Hours:</strong><br>Mon-Fri: 7:30 AM - 8:00 PM<br>Sat: 3:00 PM - 7:30 PM<br>Sun: 8.30 AM - 7.30 PM</p>
+    </div>
+
+    <div class="contact-form">
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Message</button>
+            <div id="formMessage" class="form-message"></div>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>MarDor Technologies</h3>
+            <p>Technology You Can Trust</p>
+            <p>
+                Professional ICT Solutions for Individuals,
+                Businesses and Organizations.
+            </p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="notice.html">Notice Board</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p>📞 0758 539 522</p>
+            <p>📧 mardor.tech@hotmail.com</p>
+            <p>📍 God Jope Center, Migori</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 MarDor Technologies | All Rights Reserved
+    </div>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    const msgDiv = document.getElementById('formMessage');
+    
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    msgDiv.className = 'form-message';
+    msgDiv.textContent = '';
+
+    const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        subject: this.subject.value,
+        message: this.message.value
+    };
+
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+            msgDiv.className = 'form-message success';
+            msgDiv.textContent = 'Thank you! Your message has been sent successfully.';
+            this.reset();
+        } else {
+            msgDiv.className = 'form-message error';
+            msgDiv.textContent = data.error || 'Failed to send message. Please try again.';
+        }
+    } catch (error) {
+        msgDiv.className = 'form-message error';
+        msgDiv.textContent = 'An error occurred. Please check your connection and try again.';
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+    }
+});
+</script>
+
+<script src="js/script.js"></script>
+</body>
+</html>

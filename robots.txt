@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mardortech.github.io/mardortech/sitemap.xml
